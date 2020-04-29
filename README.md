@@ -1,5 +1,3 @@
-# typescript-lunch-and-learn
-
 # TypeScript L&L
 
 ## 1. Inference
