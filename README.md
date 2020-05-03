@@ -106,12 +106,32 @@
   ##### Timeline
 
 ## 8. From Cody
-```
-Basic types
-Typing variables
-Typing functions, argument types, function return types
-Declaring object types with type and interface, not sure its worth going into the differences but wouldn’t be surprised if someone asks so maybe be prepared to answer
-Enums
-Generics
-How to type React components
-```
+  #### Basic types
+  #### Typing variables
+  #### Typing functions, argument types, function return types
+  #### Declaring object types with type and interface, not sure its worth going into the differences but wouldn’t be surprised if someone asks so maybe be prepared to answer
+  #### Enums
+  ```tsx
+  // Enums
+  // Allows us to define a set of named constants. Enums can make it easier to document intent, or create a set of distinct 
+ cases. By default, TypeScript will define enums as numeric, but we define it mostly with strings
+  
+  enum Direction {
+    Up = 1,
+    Down,
+    Left,
+    Right,
+  }
+  console.log(Direction.Down)
+  // 2
+  enum Direction {
+    Up = "UP",
+    Down = "DOWN",
+    Left = "LEFT",
+    Right = "RIGHT",
+  }
+  console.log(Direction.Down)
+  // "DOWN"
+  ```
+  #### Generics
+  #### How to type React components
