@@ -244,6 +244,154 @@
   ##### Quiz?
   ##### Example in FG app?
   
+## 5 Interface VS Types
+  ##### Are they the same thing? They seem to be doing the same thing.
+  Short answer, it doesn't really matter.
+  The feature sets of both Interface and Types have become so similar 
+  
+  
+  ##### Interface
+  ```tsx
+  // Geared towards defining the shape of objects or classes
+  // Most of the time, we are using objects (Campaigns, Fundraisers etc)
+  // And Interfaces are built deliberately for that.
+  
+  
+  // 1. Implementing an Object
+  
+  interface Campaign {
+    name: string,
+    amount_raised: number
+  }
+  
+  const flipgive: Campaign = {
+    name: 'FlipGive Giving Club',
+    amount_raised: 1000
+  }
+  
+  // If I type in `n1ame`
+  // TS will show a warning
+  
+  const flipgive: Campaign = {
+    n1ame: 'FlipGive Giving Club',
+    amount_raised: 1000
+  }
+  
+  
+  // 2. Functions
+  interface LeaveCampaign {
+    (name: string): string;
+  }
+  
+  const leftCampaign: LeaveCampaign = (name) => 'FlipGive Giving Club';
+  
+  // if we assign `name` with Boolean, TS will yell at me
+  
+  const leftCampaign: LeaveCampaign = (name: boolean) => 'FlipGive Giving Club';
+  
+  
+  // 3. Extends
+  interface User {
+    name: string;
+    email: string;
+  }
+  interface Fundraiser extends User {
+    campaign_id: ID;
+  }
+  
+  // This will show an error because I'm missing a required property
+  const fundraiser_1: Fundraiser = {
+    name: 'Gerry',
+    email: 'gsuwignyo@flipgive.com'
+  }
+  
+  // 4. Declaration Merging (Interface's unique feature)
+  // TS allows you to merge these two interfaces
+  interface Fundraiser {
+    name: string;
+    email: string;
+  }
+  interface Fundraiser {
+    campaign_id: ID;
+  }
+  
+  // Again, this will STILL show an error because I'm missing a required property
+  // Is this good or bad? We will let the Senior devs decide.
+  const fundraiser_1: Fundraiser = {
+    name: 'Gerry',
+    email: 'gsuwignyo@flipgive.com'
+  }
+  ```
+  
+  ##### Type Alias
+  **Type aliases**are exactly the same as their original**types**, they are simply alternative names.
+  
+  ```tsx
+  // 1. General Use
+  type isFundraiser = boolean;
+  
+  // Downside of using Type Aliases:
+    // warning message is not as descriptive as Interface
+    // ex. it will warn me that string 'true' is not assignable to type 'boolean', not type 'isFundraiser', bc 'isFundraiser' is just a boolean
+    // side note: this can be achieved by using an Opaque Type, it has been requested but not supported in TS at the moment
+    const gerry: isFundraiser = 'true';
+    
+    
+  // 2. Why Type Alias and Interface are very similar now days.
+  // Improved error message when using Type Alias to define an object
+  
+  type Fundraiser = {
+    name: string;
+    campaign_name: string;
+  }
+  
+  const fundraiser: Fundraiser = {
+    name: 'Gerry'
+  }
+  
+  
+  // 3. Type Alias will not able to extend
+  // why not? bc when an object is defined with Type Alias, the shape is very fixed.
+  
+  // Method 1: Intersection (As of version 2.7)
+  
+  type Fundraiser = {
+    name: string;
+    campaign_name: string;
+  } & { amount_raised: number; }
+  
+  const fundraiser: Fundraiser = {
+    name: 'Gerry',
+    campaign_name: 'FlipGive'
+  } // this will show amount_raised is missing
+  
+  // Method 2: Union
+  
+  type Fundraiser = {
+    name: string;
+    campaign_name: string;
+  } 
+  
+  type User = {
+    amount_raised: number;
+  }
+  
+  type Gerry = Fundraiser | User;
+  
+  const gerry: Gerry = {
+    name: 'Gerry',
+    campaign_name: 'FlipGive'
+  }
+  
+  ```
+  
+  ##### Rule of Thumb When Using Type Aliases vs Interface 
+  [Advanced Types · TypeScript](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+  
+  1. Because[an ideal property of software is being open to extension](https://en.wikipedia.org/wiki/Open/closed_principle), you should always use an interface over a type alias if possible.
+  2. On the other hand, if you can’t express some shape with an interface and you need to use a union or tuple type, type aliases are usually the way to go.
+
+  
 ## 6. Generics
   ##### 
   **
