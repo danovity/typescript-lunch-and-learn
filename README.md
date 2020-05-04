@@ -4,7 +4,7 @@
   ##### Type Annotations and Inference
   1. Type annotations, code we add to tell Typescript what type of value a variable will refer to
   2. Type inference, TypeScript tries to figure out what type of value a variable refers to
-  examples,
+  3. examples,
   ```tsx
   // Type Inference
   let a = "hi"
