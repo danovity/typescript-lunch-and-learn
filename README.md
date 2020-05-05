@@ -253,18 +253,6 @@
   ##### Tuples in Action
   ##### Why Tuples?
 
-
-## 5. Interface
-  ##### Interfaces 
-  ##### Long type annotations
-  ##### Fixing long type annotations with Interface
-  ##### Syntax around Interface
-  ##### Functions in Interface
-  ##### Code Reuse with Interface
-  ##### General Plan with Interface
-  ##### What is the ? after a variable or function name?
-  ##### Quiz?
-  ##### Example in FG app?
   
 ## 5 Interface VS Types
   ##### Are they the same thing? They seem to be doing the same thing.
