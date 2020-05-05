@@ -1,6 +1,11 @@
 # TypeScript L&L
 
-## 1. Inference
+## Why use TypeScript?
+  ##### 1. Highlight the errors as early as possible
+  While you are writing, TypeScript tells you what is wrong.
+  ![Example_1](https://d.pr/i/NTM8S8)
+
+## 1. Type Inference
   ##### Type Annotations and Inference
   1. Type annotations, code we add to tell Typescript what type of value a variable will refer to
   2. Type inference, TypeScript tries to figure out what type of value a variable refers to
