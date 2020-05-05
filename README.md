@@ -37,6 +37,7 @@
   let giftcards: string[] = ['Amazon', 'Walmart', 'Apple']
   let intentIds: number[] = [1,2,3]
   let userHaveJoinedTeam: boolean[] = [true, true, false]
+  let giftcards: (string | number)[] = ['Amazon', 'Walmart', 'Apple', 1]
   ```
   ![image](https://user-images.githubusercontent.com/6895716/81056571-c46ef280-8e98-11ea-8b42-a476a6ad2ba4.png)
 
