@@ -95,19 +95,19 @@
   
   ```tsx
   // Type Inference will not work if declaration and initialization are not on the same line
-  let donation; // any
+  let donation; 
   donation = 5;
   ```
   ![image](https://user-images.githubusercontent.com/6895716/81057805-2892b600-8e9b-11ea-8fd8-89e1c98dc118.png)
 
 
+  #### When should we use Type Annotation?
   ##### The `Any` type
   ```tsx
-  // 1. any is a type, same as 'string' or 'boolean'
-  // 2. means TS has no idea what this is, because it can't check for correct property references
-  // 3. avoid variables with 'any' at all cost, because the purpose of TS is to catch errors in our code, if it does not know the type, it cannot do any error checking
+  // 1. any is one of the Primitive types, same as 'string', 'boolean', or 'number' etc
+  // 2. It means that TS has no idea what this is, because it can't check for correct property references
+  // 3. We should avoid variables with 'any' at all cost, because the purpose of TS is to catch errors in our code, if it does not know the type, it cannot do any error checking
   
-  // When to use annotations
   // 1) Function that returns the 'any' type
   const json = '{"x": 10, "y": 20}';
   const coordinates = JSON.parse(json); // coordinates and the function are both any
@@ -115,44 +115,47 @@
   
   coordinates.invalid_method(); // TS is not able to show errors when im calling a property that does not exist, bc the variable 'coordinates' has an 'any' type
   ```
+  ![image](https://user-images.githubusercontent.com/6895716/81058405-647a4b00-8e9c-11ea-9f4b-a34ed21d09c2.png)
+
   
   ##### Fixing the `Any` type
   ```tsx
   const coordinates:{ x: number, y: number } = JSON.parse(json);
   
   coordinates.invalid_method(); // TS will now show an error
-  
   ```
+  ![image](https://user-images.githubusercontent.com/6895716/81058487-896ebe00-8e9c-11ea-8b2d-cce4562abfed.png)
+
   
   ##### Delayed Initialization
   ```tsx
   // 2) When we declare a variable on one line and initialize it later
   
+  // TS Will Not Show Error
   let trees = ['oak', 'pine', 'maple']
-  let treeOfCanda: string;
+  let treeScore;
   
   trees.forEach((tree) => {
     if (tree === 'maple'){
-      treeOfCanada = 'maple';
+      treeScore = '100';
     }
   })
-  
   ```
-
-  #### When inference doesn't work
+  ![image](https://user-images.githubusercontent.com/6895716/81058791-292c4c00-8e9d-11ea-8337-b6e3c12debdc.png)
+  
   ```tsx
-  // 3) Variable whose type cannot be inferred correctly
-  let humans = ['Winston', 'Cody', 'Meraj']
-  let isAllergicToCucumber: boolean | number = false;
+  // TS Will Show Error
+  let trees = ['oak', 'pine', 'maple']
+  let treeScore: number;
   
-  humans.forEach((human)=>{
-    if (human === 'Winston'){
-      isAllergicToCucumber = 'Winston';
+  trees.forEach((tree) => {
+    if (tree === 'maple'){
+      treeScore = '100';
     }
   })
-  
   ```
-  
+  ![image](https://user-images.githubusercontent.com/6895716/81058885-5d077180-8e9d-11ea-827e-15dcca68578d.png)
+
 
 ## 2. Annotations with Functions and Objects
   ##### More on Annotations Around Functions
@@ -168,23 +171,14 @@
   const subtract = (a: number, b: number) => {
     a - b;
   } // we forgot to return here, however TS is not warning us bc of type inference
-  
+
   const subtract = (a: number, b: number): number => {
     return a - b; 
   } // after adding type annotation for the function's return type, TS will now warn us if we did not return the correct type 
   
   ```
-  ##### Annotations for Anonymous Functions
-  ```tsx
-  function divide(a: number, b: number): number {
-    return a / b;
-  }
-  
-  const multiply = function(a: number, b: number): number {
-    return a * b;
-  }
-  ```
-  
+  ![image](https://user-images.githubusercontent.com/6895716/81059530-8ffe3500-8e9e-11ea-9b7f-7c4a54bbaffa.png)
+
   ##### Void and Never
   ```tsx
   const logger = (message: string): void => {
