@@ -462,6 +462,16 @@
   ```
   ![image](https://user-images.githubusercontent.com/6895716/81071731-1de41b00-8eb3-11ea-8a40-5e09c9ffa2b2.png)
 
+  ```
+  The most commonly used type parameter names are:
+
+  E - Element (used extensively by the Java Collections Framework)
+  K - Key
+  N - Number
+  T - Type
+  V - Value
+  S,U,V etc. - 2nd, 3rd, 4th types
+  ```
 **
 
 
