@@ -247,20 +247,7 @@
   }: { coords: { lat: number; lng: number } } = profile;
   ```
 
-## 3. Typed Arrays?
-  ##### Arrays in TypeScript
-  ##### Why Typed Array?
-  ##### Multiple Types in Arrays
-  ##### When to use Typed Arrays (example from FG app?)
-
-
-## 4. Tuples
-  ##### Tuples in TypeScript
-  ##### Tuples in Action
-  ##### Why Tuples?
-
-  
-## 5 Interface VS Types
+## 3. Interface VS Type Alias
   ##### Are they the same thing? They seem to be doing the same thing.
   Short answer, it doesn't really matter.
   The feature sets of both Interface and Types have become so similar 
@@ -408,7 +395,7 @@
   2. On the other hand, if you can’t express some shape with an interface and you need to use a union or tuple type, type aliases are usually the way to go.
 
   
-## 6. Generics
+## 4. Generics
   ##### What is Generics?
   - It lets you define dynamically what the types that the function will use by utilizing a Type Variable
   ```tsx
@@ -472,31 +459,3 @@
   V - Value
   S,U,V etc. - 2nd, 3rd, 4th types
   ```
-**
-
-
-## 7. Convert a FG JavaScript file to TypeScript
-  #### Enums
-  ```tsx
-  // Enums
-  // Allows us to define a set of named constants. Enums can make it easier to document intent, or create a set of distinct 
- cases. By default, TypeScript will define enums as numeric, but we define it mostly with strings
-  
-  enum Direction {
-    Up = 1,
-    Down,
-    Left,
-    Right,
-  }
-  console.log(Direction.Down)
-  // 2
-  enum Direction {
-    Up = "UP",
-    Down = "DOWN",
-    Left = "LEFT",
-    Right = "RIGHT",
-  }
-  console.log(Direction.Down)
-  // "DOWN"
-  ```
-  #### How to type React components
