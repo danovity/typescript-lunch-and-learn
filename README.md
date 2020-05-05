@@ -12,55 +12,68 @@
   ![image](https://user-images.githubusercontent.com/6895716/81054404-c8007a80-8e94-11ea-9610-d170424562de.png)
 
  
-## 1. Type Inference
-  ##### Type Annotations and Inference
-  1. Type annotations, code we add to tell Typescript what type of value a variable will refer to
-  2. Type inference, TypeScript tries to figure out what type of value a variable refers to
-  3. examples,
+## 1. Type Annotations and Inference
+  ##### Type Inference
   ```tsx
   // Type Inference
-  let a = "hi"
-  a = 1 // typescript will show an warning
+  // Definition: Type inference, TypeScript tries to figure out what type of value a variable refers to
+  let campaign = "FlipGive"
+  campaign = 1 // typescript will show an warning
+  ```
+  ![image](https://user-images.githubusercontent.com/6895716/81054916-ad7ad100-8e95-11ea-99bf-49cc1c28ad20.png)
+
   
+  ##### Type Annotations with Variables
+  ```tsx
   // Type Annotations
+  // Definition: Type annotations, code we add to tell Typescript what type of value a variable will refer to
   // Primitive Types: number, boolean, void, undefined, string, symbol, null
   // Object Types: functions, arrays, classes, objects
   // ex. You assign the type annotation by using colon and the desire type
+  let fundraiser: string = 'Victor';
+  let fundraiser: number = 'hi'; // typescript will show an error
   ```
-  
-  ##### Annotations with Variables
+  ![image](https://user-images.githubusercontent.com/6895716/81055204-3b56bc00-8e96-11ea-9397-ce0812ff5b9d.png)
+
   ```tsx
-  let apples: number = 5;
-  let apples: number = 'hi'; // typescript will show an error
-  
-  let nothing: undefined = undefined
-  let almostNothing: null = null
+  let nothing: undefined = undefined // Something hasn't been initialized
+  let almostNothing: null = null     // Something is currently unavailable
   
    // Built In Objects
-  let now: Date = new Date(); // Date is an internal TypeScript object
+  let now: Date = new Date();        // Date is an internal TypeScript object
   ```
-  ##### Object Literal Annotations
+  ##### Object Literal Annotations (aka object)
   ```tsx
-  let colors: string[] = ['red', 'green', 'blue']
-  let myNumbers: number[] = [1,2,3]
-  let truths: boolean[] = [true, true, false]
-  
+  let giftcards: string[] = ['Amazon', 'Walmart', 'Apple']
+  let intentIds: number[] = [1,2,3]
+  let userHaveJoinedTeam: boolean[] = [true, true, false]
+  ```
+  ![image](https://user-images.githubusercontent.com/6895716/81056571-c46ef280-8e98-11ea-8b42-a476a6ad2ba4.png)
+
+  ```tsx
   // classes
-  class Car {
-  
+  class Fundraiser {
+    constructor(name: string, email: string){
+      name  = 'Sean'
+      email = 'sye@flipgive.com'
+    };
   }
   
-  let car: Car = new Car();
-  
-  // object literal (aka object)
+  let sean: Fundraiser = new Fundraiser();
+  ```
+  ![image](https://user-images.githubusercontent.com/6895716/81056968-8de5a780-8e99-11ea-835c-4513489ea62a.png)
+
+  ```tsx
   // ex. we assign an object to the variable 'point'
   // with x and y properties that can only be a number type
   
-  let point: { x: number; y: number } = {
-    x: 10, // if x: 'abc', an error message will appear
-    y: 20
+  let transaction: { intent_token: string; fundraiser_id: number } = {
+    intent_token: 'abc', // if intent_token: 10, an error message will appear
+    fundraiser_id: 8
   };
   ```
+  ![image](https://user-images.githubusercontent.com/6895716/81057271-182e0b80-8e9a-11ea-9f4c-8dbe9a4afe70.png)
+
   
   ##### Annotations Around Functions
   ```tsx
@@ -68,8 +81,14 @@
   // - as developers, we care about what arguments that will go into the function, and what the function will return
   // - annotation is on the left side of equal sign, right hand side is the actual implementation
   
-  const logNumber: (i: number) => void = (i) => {
-    console.log(i);
+  // Without TS
+  const joinTeam = (user_id) => {
+    console.log(user_id);
+  }
+  
+  // With TS
+  const joinTeam: (user_id: number) => void = (user_id) => {
+    console.log(user_id);
   }
   ```
   ##### Understanding Inference
