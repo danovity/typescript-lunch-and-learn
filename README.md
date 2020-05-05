@@ -13,16 +13,6 @@
 
  
 ## 1. Type Annotations and Inference
-  ##### Type Inference
-  ```tsx
-  // Type Inference
-  // Definition: Type inference, TypeScript tries to figure out what type of value a variable refers to
-  let campaign = "FlipGive"
-  campaign = 1 // typescript will show an warning
-  ```
-  ![image](https://user-images.githubusercontent.com/6895716/81054916-ad7ad100-8e95-11ea-99bf-49cc1c28ad20.png)
-
-  
   ##### Type Annotations with Variables
   ```tsx
   // Type Annotations
@@ -91,19 +81,26 @@
     console.log(user_id);
   }
   ```
-  ##### Understanding Inference
+  
+  ##### Understanding Type Inference
   ```tsx
-  // if the "variable declaration" and "variable initialization" are on the same line, TypeScript will look at the type of the "variable initialization" and use that as the type.
-  
-  const color = 'red'
-  
-  
-  // Type Inference will not work if declaration and initialization are not on the same line
-  let apples; // any
-  apples = 5;
-  
+  // Type Inference
+  // Definition: Type inference, TypeScript tries to figure out what type of value a variable refers to
+  // It happens when the "variable declaration" and "variable initialization" are on the same line, TypeScript will look at the type of the "variable initialization" and use that as the type.
+  // example,
+  let campaign = "FlipGive"
+  campaign = 1 // typescript will show an warning
   ```
+  ![image](https://user-images.githubusercontent.com/6895716/81054916-ad7ad100-8e95-11ea-99bf-49cc1c28ad20.png)
   
+  ```tsx
+  // Type Inference will not work if declaration and initialization are not on the same line
+  let donation; // any
+  donation = 5;
+  ```
+  ![image](https://user-images.githubusercontent.com/6895716/81057805-2892b600-8e9b-11ea-8fd8-89e1c98dc118.png)
+
+
   ##### The `Any` type
   ```tsx
   // 1. any is a type, same as 'string' or 'boolean'
