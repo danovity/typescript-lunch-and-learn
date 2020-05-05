@@ -426,7 +426,7 @@
   
   ```tsx
   // 2. Using Generics
-    function removeItemFromArray<T>(arr: Array<T>, item: T): Array<T> {
+  function removeItemFromArray<T>(arr: Array<T>, item: T): Array<T> {
     const index = arr.findIdex(i => i === item)
     arr.splice(index, 1);
     return arr
@@ -438,7 +438,7 @@
   ![image](https://user-images.githubusercontent.com/6895716/81071527-d8275280-8eb2-11ea-930a-fb2f6acee057.png)
   ```tsx
   
-    function removeItemFromArray<T>(arr: Array<T>, item: T): Array<T> {
+  function removeItemFromArray<T>(arr: Array<T>, item: T): Array<T> {
     const index = arr.findIdex(i => i === item)
     arr.splice(index, 1);
     return arr
