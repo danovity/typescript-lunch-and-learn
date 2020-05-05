@@ -1,10 +1,17 @@
 # TypeScript L&L
 
 ## Why use TypeScript?
-  ##### 1. Highlight the errors as early as possible
-  While you are writing, TypeScript tells you what is wrong.
-  ![Example_1](https://d.pr/i/NTM8S8)
+  ##### 1. Code Suggestions
 
+  TypeScript populates with the options while you type which saves a lot of dev effort of figuring out what should be written. Writing in TypeScript makes it self explanatory. E.g if a new developer joins the team and he is reusing a component, TypeScript will suggest what are the props required in the following screenshot.
+  ![image](https://user-images.githubusercontent.com/6895716/81054589-131a8d80-8e95-11ea-8db7-780802cb7fb8.png)
+  
+  ##### 2. Highlight the errors as early as possible
+  
+  While you are writing, TypeScript tells you what is wrong.
+  ![image](https://user-images.githubusercontent.com/6895716/81054404-c8007a80-8e94-11ea-9610-d170424562de.png)
+
+ 
 ## 1. Type Inference
   ##### Type Annotations and Inference
   1. Type annotations, code we add to tell Typescript what type of value a variable will refer to
