@@ -203,8 +203,8 @@
     date: Date;
     weather: string;
   }): void => {
-    console.log(date);
-    console.log(weather);
+    console.log(todaysWeather.date);
+    console.log(todaysWeather.weather);
   }
   
   // After Destructuring
@@ -234,11 +234,17 @@
     }
   };
 
+  // Without TS
+  const { age } = profile;
+  const {
+    coords: { lat, lng }
+  } = profile;
+  
+  // With TS
   const { age }: { age: number } = profile;
   const {
     coords: { lat, lng }
   }: { coords: { lat: number; lng: number } } = profile;
-
   ```
 
 ## 3. Typed Arrays?
@@ -398,7 +404,7 @@
   ##### Rule of Thumb When Using Type Aliases vs Interface 
   [Advanced Types · TypeScript](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
   
-  1. Because[an ideal property of software is being open to extension](https://en.wikipedia.org/wiki/Open/closed_principle), you should always use an interface over a type alias if possible.
+  1. Because [an ideal property of software is being open to extension](https://en.wikipedia.org/wiki/Open/closed_principle), you should always use an interface over a type alias if possible.
   2. On the other hand, if you can’t express some shape with an interface and you need to use a union or tuple type, type aliases are usually the way to go.
 
   
