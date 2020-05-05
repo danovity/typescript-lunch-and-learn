@@ -340,7 +340,7 @@
   ```
   
   ##### Type Alias
-  **Type aliases**are exactly the same as their original**types**, they are simply alternative names.
+  **Type aliases** are exactly the same as their original **types**, they are simply alternative names.
   
   ```tsx
   // 1. General Use
@@ -410,24 +410,12 @@
   
 ## 6. Generics
   ##### 
-  **
-
-##### example, [https://github.com/BetterTheWorld/flipgive-mobile/commit/8baa1e6cf71281da519d06cabf4d41676ec34253](https://github.com/BetterTheWorld/flipgive-mobile/commit/8baa1e6cf71281da519d06cabf4d41676ec34253)
-
-  #####
+  
 
 **
 
 
 ## 7. Convert a FG JavaScript file to TypeScript
-  ##### Teamsnap
-  ##### Timeline
-
-## 8. From Cody
-  #### Basic types
-  #### Typing variables
-  #### Typing functions, argument types, function return types
-  #### Declaring object types with type and interface, not sure its worth going into the differences but wouldn’t be surprised if someone asks so maybe be prepared to answer
   #### Enums
   ```tsx
   // Enums
@@ -451,5 +439,4 @@
   console.log(Direction.Down)
   // "DOWN"
   ```
-  #### Generics
   #### How to type React components
