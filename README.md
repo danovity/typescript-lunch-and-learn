@@ -1,4 +1,4 @@
-# TypeScript L&L
+# TypeScript Lunch and Learn
 
 ## Why use TypeScript?
   ##### 1. Code Suggestions
