@@ -409,8 +409,58 @@
 
   
 ## 6. Generics
-  ##### 
+  ##### What is Generics?
+  - It lets you define dynamically what the types that the function will use by utilizing a Type Variable
+  ```tsx
+  // 1. Pre-Generics
+  // We have two functions, they are used to removing a value from an array
+  // one removes an array of numbers
+  // the other one removes an array of strings
   
+  function removeItemFromArray(arr: Array<number>, item: number): Array<number> {
+    const index = arr.findIndex(i => i === item)
+    arr.splice(index, 1);
+    return arr
+  }
+  
+  removeItemFromArray([1,2,3], 2)
+  
+  function removeStringItemFromArray(arr: Array<string>, item: string): Array<string> {
+    const index = arr.findIndex(i => i === item)
+    arr.splice(index, 1);
+    return arr
+  }
+  
+  removeStringItemFromArray(['1','2','3'], '2')
+  
+  ```
+![image](https://user-images.githubusercontent.com/6895716/81071326-8ed70300-8eb2-11ea-88ec-e96139abc2ee.png)
+
+  
+  ```tsx
+  // 2. Using Generics
+    function removeItemFromArray<T>(arr: Array<T>, item: T): Array<T> {
+    const index = arr.findIdex(i => i === item)
+    arr.splice(index, 1);
+    return arr
+  }
+  
+  removeItemFromArray([1,2,3], 2)
+  removeItemFromArray(['1','2','3'], '2')
+  ```
+  ![image](https://user-images.githubusercontent.com/6895716/81071527-d8275280-8eb2-11ea-930a-fb2f6acee057.png)
+  ```tsx
+  
+    function removeItemFromArray<T>(arr: Array<T>, item: T): Array<T> {
+    const index = arr.findIdex(i => i === item)
+    arr.splice(index, 1);
+    return arr
+  }
+  
+  removeItemFromArray<number>([1,2,3], 2)
+  removeItemFromArray<string>(['1','2','3'], '2')
+  ```
+  ![image](https://user-images.githubusercontent.com/6895716/81071731-1de41b00-8eb3-11ea-8a40-5e09c9ffa2b2.png)
 
 **
 
